@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import ProductPage from './components/ProductPage'
 
@@ -15,6 +16,7 @@ export default function App() {
             <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   )

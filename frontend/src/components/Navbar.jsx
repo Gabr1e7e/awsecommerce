@@ -1,4 +1,4 @@
-import { Sun, Moon, ShoppingCart, User, Search, Shirt, Cable, HouseHeart, Volleyball, Book, Gamepad2 } from 'lucide-react'
+import { Sun, Moon, ShoppingCart, User, Search, Shirt, Cable, HouseHeart, Volleyball, Gamepad2, Tally4, Book } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { Link } from 'react-router-dom'
 
@@ -63,53 +63,74 @@ export default function Navbar() {
                 </div>
             </div>
             <div>
-                <div className="flex items-center gap-2 shrink-0">
-                    {/* abbigliamento*/}
-                    <button
-                        onClick={toggleTheme}
+                <div className="flex justify-center w-fit mx-auto hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-400 rounded-full ">
+                    <h2 className="p-2 rounded-full w-auto text-xl">
+                        Categorie
+                    </h2>
+                </div>
+                <div className="flex items-center gap-2 shrink-0 justify-center gap-10 mt-2 mb-2">
+
+                    {/* all category*/}
+                    <Link
+                        to="/all"
+                        title="Tutte le categorie"
                         className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                       <Shirt size={20} className="text-gray-800 dark:text-gray-400" >
-                        
-                       </Shirt>
-                    </button>
+                        <Tally4 size={25} className="text-gray-800 dark:text-gray-400" />
+                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                            Tutte le categorie
+                        </span>
+                    </Link>
+                    {/* abbigliamento*/}
+                    <Link
+                        to="/abbigliamento"
+                        title="Abigliamento"
+                        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                        <Shirt size={25} className="text-gray-800 dark:text-gray-400" />
+                    </Link>
 
                     {/* ellettronica */}
                     <Link
-                        to="/login"
+                        to="/elettronica"
+                        title="Elettronica"
                         className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Cable size={20} className="text-gray-800 dark:text-gray-400" />
+                        <Cable size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
 
                     {/* casa  */}
                     <Link
-                        to="/cart"
+                        to="/casa"
+                        title="Casa"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <HouseHeart size={20} className="text-gray-800 dark:text-gray-400" />
+                        <HouseHeart size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
-                    
+
                     {/* sport  */}
                     <Link
-                        to="/cart"
+                        to="/sport"
+                        title="Sport"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Volleyball size={20} className="text-gray-800 dark:text-gray-400" />
+                        <Volleyball size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
-                     {/* libri  */}
+                    {/* libri  */}
                     <Link
-                        to="/cart"
+                        to="/books"
+                        title="Libri"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Book size={20} className="text-gray-800 dark:text-gray-400" />
+                        <Book size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
-                     {/* giochi  */}
+                    {/* giochi  */}
                     <Link
-                        to="/cart"
+                        to="/games"
+                        title="Giochi"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Gamepad2 size={20} className="text-gray-800 dark:text-gray-400" />
+                        <Gamepad2 size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
                 </div>
             </div>
