@@ -3,7 +3,7 @@ import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
-import ProductPage from './components/ProductPage'
+import ProductPage from './pages/ProductPage'
 
 export default function App() {
   return (

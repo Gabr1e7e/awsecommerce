@@ -111,12 +111,10 @@ export default function ErrorPage({
   const displayTitle = title ?? config.defaultTitle;
   const displayDesc  = description ?? config.defaultDesc;
   const { Icon } = config;
-
-  // onHome con fallback a navigate("/")
   const handleHome = onHome ?? (() => navigate("/"));
 
   const actionMap = {
-    retry:   { label: "Riprova",                 Icon: RotateCcw,   primary: true,  handler: onRetry },
+    retry:   { label: "Riprova",                  Icon: RotateCcw,   primary: true,  handler: onRetry },
     home:    { label: "Torna alla home",          Icon: Home,        primary: true,  handler: handleHome },
     login:   { label: "Effettua login",           Icon: LogIn,       primary: true,  handler: onLogin ?? (() => navigate("/login")) },
     back:    { label: "Torna indietro",           Icon: ChevronLeft, primary: false, handler: onBack  ?? (() => navigate(-1)) },

@@ -4,10 +4,11 @@ const API = axios.create({
     baseURL: 'http://127.0.0.1:8000/api'
 })
 
-export const getProducts = (skip = 0, limit = 20, category = '') => {
-    return API.get('/products', {
-        params: { skip, limit, category }
-    })
+export const getProducts = (params = {}) => {
+    return API.get('/products', { params })
+}
+export const getCategories = () => {
+    return API.get('/products/categories')
 }
 
 export const getProduct = (productID) => {

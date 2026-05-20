@@ -63,7 +63,7 @@ export default function Navbar() {
                 </div>
             </div>
             <div>
-                <div className="flex justify-center w-fit mx-auto hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-400 rounded-full ">
+                <div className="flex justify-center w-fit mx-auto  text-gray-900 dark:text-gray-400 rounded-full ">
                     <h2 className="p-2 rounded-full w-auto text-xl">
                         Categorie
                     </h2>
