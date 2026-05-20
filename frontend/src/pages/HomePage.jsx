@@ -1,16 +1,18 @@
 ﻿import { useEffect, useState } from 'react'
 import { getProducts, getCategories } from '../api/product'
 import ProductCard from './ProductPage'
+import { MoveLeft, MoveRight } from 'lucide-react'
+import Button from '../components/Button';
 
 const LIMIT = 15
 
 export default function HomePage() {
-  const [products, setProducts]         = useState([])
-  const [categories, setCategories]     = useState([])
+  const [products, setProducts] = useState([])
+  const [categories, setCategories] = useState([])
   const [activeCategory, setActiveCategory] = useState('')
-  const [loading, setLoading]           = useState(true)
-  const [error, setError]               = useState(null)
-  const [page, setPage]                 = useState(1)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [page, setPage] = useState(1)
 
   // ─── Carica categorie una volta sola ────────────────────────────────────────
   useEffect(() => {
@@ -40,9 +42,9 @@ export default function HomePage() {
         setProducts(res.data)
       } catch (err) {
         const status = err?.response?.status
-        if (status === 403)        setError('403')
+        if (status === 403) setError('403')
         else if (!navigator.onLine) setError('network')
-        else                        setError('500')
+        else setError('500')
       } finally {
         setLoading(false)
       }
@@ -79,7 +81,7 @@ export default function HomePage() {
       {/* Tab categorie */}
       {categories.length > 0 && (
         <div className="flex flex-wrap gap-2">
-          <button
+          <Button
             onClick={() => handleCategoryChange('')}
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all border
               ${!activeCategory
@@ -88,9 +90,9 @@ export default function HomePage() {
               }`}
           >
             Tutti
-          </button>
+          </Button>
           {categories.map((cat) => (
-            <button
+            <Button
               key={cat}
               onClick={() => handleCategoryChange(cat)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all border
@@ -100,7 +102,7 @@ export default function HomePage() {
                 }`}
             >
               {cat}
-            </button>
+            </Button>
           ))}
         </div>
       )}
@@ -131,23 +133,25 @@ export default function HomePage() {
 
           {/* Paginazione */}
           <div className="flex items-center justify-center gap-2 pt-4">
-            <button
+            <Button
               onClick={() => setPage(p => p - 1)}
               disabled={page === 1}
-              className="btn btn-ghost btn-sm disabled:opacity-30"
+              className="p-2 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-cognac-50 dark:hover:bg-gray-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
-              ← Precedente
-            </button>
+              <MoveLeft size={18} className="text-gray-600 dark:text-gray-300" />
+            </Button>
+
             <span className="px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300">
               Pagina {page}
             </span>
-            <button
+
+            <Button
               onClick={() => setPage(p => p + 1)}
               disabled={products.length < LIMIT}
-              className="btn btn-ghost btn-sm disabled:opacity-30"
+              className="p-2 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-cognac-50 dark:hover:bg-gray-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
-              Successiva →
-            </button>
+              <MoveRight size={18} className="text-gray-600 dark:text-gray-300" />
+            </Button>
           </div>
         </>
       )}

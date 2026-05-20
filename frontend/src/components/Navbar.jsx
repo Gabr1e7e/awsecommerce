@@ -1,4 +1,4 @@
-import { Sun, Moon, ShoppingCart, User, Search, Shirt, Cable, HouseHeart, Volleyball, Gamepad2, Tally4, Book } from 'lucide-react'
+import { Sun, Moon, ShoppingCart, User, Search, Shirt, Cable, HouseHeart, Volleyball, Gamepad2, Tally4, Book, Car, Computer, HeartPlus, ForkKnife, HomeIcon, Music, Building } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { Link } from 'react-router-dom'
 
@@ -81,50 +81,74 @@ export default function Navbar() {
                             Tutte le categorie
                         </span>
                     </Link>
-                    {/* abbigliamento*/}
+                    {/* car*/}
                     <Link
-                        to="/abbigliamento"
-                        title="Abigliamento"
+                        to="/car"
+                        title="Motori"
                         className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Shirt size={25} className="text-gray-800 dark:text-gray-400" />
+                        <Car size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
 
-                    {/* ellettronica */}
+                    {/* pc */}
+                    <Link
+                        to="/computer"
+                        title="Computer"
+                        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                        <Computer size={25} className="text-gray-800 dark:text-gray-400" />
+                    </Link>
+
+                    {/* elettronica  */}
                     <Link
                         to="/elettronica"
                         title="Elettronica"
-                        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
                         <Cable size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
 
+                    {/* salute  */}
+                    <Link
+                        to="/salute"
+                        title="Salute"
+                        className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                        <HeartPlus size={25} className="text-gray-800 dark:text-gray-400" />
+                    </Link>
+                    {/* cucina  */}
+                    <Link
+                        to="/cucina"
+                        title="Cucina"
+                        className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                        <ForkKnife size={25} className="text-gray-800 dark:text-gray-400" />
+                    </Link>
                     {/* casa  */}
                     <Link
                         to="/casa"
                         title="Casa"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <HouseHeart size={25} className="text-gray-800 dark:text-gray-400" />
+                        <HomeIcon size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
-
-                    {/* sport  */}
+                    {/* Musica  */}
                     <Link
-                        to="/sport"
-                        title="Sport"
+                        to="/musica"
+                        title="Musica"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Volleyball size={25} className="text-gray-800 dark:text-gray-400" />
+                        <Music size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
-                    {/* libri  */}
+                    {/* Office  */}
                     <Link
-                        to="/books"
-                        title="Libri"
+                        to="/office"
+                        title="Ufficio"
                         className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     >
-                        <Book size={25} className="text-gray-800 dark:text-gray-400" />
+                        <Building size={25} className="text-gray-800 dark:text-gray-400" />
                     </Link>
-                    {/* giochi  */}
+                    {/* casa  */}
                     <Link
                         to="/games"
                         title="Giochi"
